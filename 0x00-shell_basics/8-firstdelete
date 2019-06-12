@@ -1,2 +1,2 @@
-#!/bin/trash
+#!/bin/bash
 rm /tmp/holberton/betty
