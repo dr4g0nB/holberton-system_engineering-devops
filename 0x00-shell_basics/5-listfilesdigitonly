@@ -1,3 +1,2 @@
-
 #!/bin/bash
-dir -la 
+ls -ls 
