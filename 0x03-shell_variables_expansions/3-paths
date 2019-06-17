@@ -1,2 +1,2 @@
 #!/bin/bash
-print $PATH 
+export PATH=$PATH | wc -l 
