@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Prints Holberton School 10 times in a while loop
+hbs='Holberton School'
+i=0
+while [ $i -lt 10 ]
+do
+  echo "$hbs"
+  i=$((i + 1))
+done

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#Prints Holberton School 10 times until loop
+#hbs='Holberton School'
+start=1
+until [ $start -gt 10 ]
+do
+  echo "Holberton School"
+  start=$(( start + 1 ))
+done
