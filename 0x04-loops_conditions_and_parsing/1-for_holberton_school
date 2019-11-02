@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Prints Holberton School 10 times in for loop
 hbs='Holberton School'
-for i in {0..9}
+for _ in {0..9}
 do
 	echo "$hbs"
 done
