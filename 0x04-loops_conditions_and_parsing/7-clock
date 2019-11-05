@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+#Displays the time for 12h 59m
+d_hr=0
+d_min=1
+
+while [ $d_hr -lt 13 ]
+do
+  echo "Hour: $d_hr"
+  while [ $d_min -lt 60 ]
+  do
+    echo "$d_min"
+    d_min=$((d_min + 1))
+  done
+  d_hr=$((d_hr + 1))
+  d_min=1
+done
