@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#Displays content of current directory
+enl_dat="$(ls)"
+for i in $enl_dat
+do
+  echo "$i" | cut -d "-" -f 2 
+done
