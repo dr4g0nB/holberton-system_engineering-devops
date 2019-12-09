@@ -1,3 +1,4 @@
+# Creates a /tmp file
 file { '/tmp/holberton':
   path => '/tmp/holberton',
   mode => '0744',
