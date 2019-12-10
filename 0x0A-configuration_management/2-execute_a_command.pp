@@ -1,4 +1,4 @@
-# Manifests that kills a process named killmenow
+# Manifest that kills a process named killmenow
 exec { 'pkill':
-  command => '/usr/bin/pkill -f killmenow'
+  command  => '/usr/bin/pkill -f killmenow'
 }
