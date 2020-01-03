@@ -10,3 +10,4 @@ echo "mode http" | tee -a /etc/haproxy/haproxy.cfg
 echo "balance roundrobin" | tee -a /etc/haproxy/haproxy.cfg
 echo "server 889 web-01-35.243.181.26" | tee -a /etc/haproxy/haproxy.cfg
 echo "server 889 web-02-34.74.228.81" | tee -a /etc/haproxy/haproxy.cfg
+sudo service haproxy restart
