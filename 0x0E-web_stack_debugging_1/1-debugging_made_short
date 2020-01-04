@@ -2,4 +2,4 @@
 #what’s keeping Ubuntu container’s Nginx installation from listening on port 80.
 sed -i "s/8080/80/g" /etc/nginx/sites-enabled/default
 service ngnix restart
-pkill -o ngnix
+pkill -o nginx
