@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Configures the domain zone.
+
+dmn=$1
+
+if [ "$#" -eq 2 ]
+then
+    sub_dmn=$2
+else
+    sub_dmn=("www" "lb-01" "web-01" "web-02")
+fi
+
+for rec_subdmn in "${sub_dmn[@]}"
+do
+    echo -n "The subdomain $rec_subdmn "
+    dig "$rec_subdmn.$dmn" | grep -A1 'ANSWER SECTION:' | tail -n -1 |
+    awk '{print "is a " $4 " record and points to " $5}'
+done
