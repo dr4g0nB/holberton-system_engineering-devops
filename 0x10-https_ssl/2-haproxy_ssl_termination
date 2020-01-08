@@ -51,3 +51,5 @@ default_backend web-backend
 
 backend web-backend
         balance roundrobin
+        server 889-web-01 35.243.181.26:80 check
+        server 889-web-02 34.74.228.81:80 check
