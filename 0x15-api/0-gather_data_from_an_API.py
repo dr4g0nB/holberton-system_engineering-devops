@@ -4,10 +4,10 @@ import requests
 import sys
 
 if __name__ == "__main__":
-    employee_id = sys.argv[2]
+    employee_id = sys.argv[1]
     """ Information from json placeholder converted in json format """
     ph_users = requests.get('https://jsonplaceholder.typicode.com/users/{}'.format(employee_id)).json()
-    ph_todos = request.get('https://jsonplaceholder.typicode.com/todos?userId={}'.format(employee_id)).json()
+    ph_todos = requests.get('https://jsonplaceholder.typicode.com/todos?userId={}'.format(employee_id)).json()
     """ Empty list to fill in with the todos list """
     all_tasks = []
     """  Traversing the todos list """
