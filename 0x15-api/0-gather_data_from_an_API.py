@@ -13,7 +13,7 @@ if __name__ == "__main__":
     """ Empty list to fill in with the todos list """
     all_tasks = []
     """  Traversing the todos list """
-    for looking_tasks in ph_todos:
+    for looking_tasks in todos:
         """ Filtering the list to obtain the completed value """
         if looking_tasks.get("completed"):
             """ Appending the content of the dict to the empty list """
