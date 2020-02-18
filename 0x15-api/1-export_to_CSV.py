@@ -1,0 +1,34 @@
+#!/usr/bin/python3
+import csv
+import json
+import requests
+import sys
+
+if __name__ == "__main__":
+    employee_id = sys.argv[1]
+    """ Information from json placeholder converted in json format """
+    ph_users = requests.get('https://jsonplaceholder.typicode.com/users/{}'
+                            .format(employee_id)).json()
+    todos = requests.get('https://jsonplaceholder.typicode.com/todos?userId={}'
+                         .format(employee_id)).json()
+    """ Empty list to fill in with the todos list """
+    all_tasks = []
+    """  Traversing the todos list """
+    for looking_tasks in todos:
+        """ Filtering the list to obtain the completed value """
+        if looking_tasks.get("completed"):
+            """ Appending the content of the dict to the empty list """
+            all_tasks.append(looking_tasks.get("title"))
+    """ Printing the dictionary """
+    print("Employee {} is done with tasks({}/{}):"
+          .format(ph_users.get("name"), len(all_tasks), len(todos)))
+    """ Filtering down to only show the tasks """
+    for looking_tasks in all_tasks:
+        print("\t {}".format(looking_tasks))
+
+    with open('{}.csv'.format(employee_id), 'w') as read_file:
+        opened_file = csv.writer(read_file, quoting=csv.QUOTE_ALL)
+
+        for i in todos:
+            opened_file.writerow([(employee_id), ph_users.get('username'),
+                                 i.get('completed'), i.get('title')])
