@@ -2,5 +2,5 @@
 
 exec { '/var/www/html/wp-includes/class-wp-locale.phpp':
   cwd = > '/var/www/html/', 
-  creates => '/wp-includes/class-wp-locale.php',
+  command => sed -i "/wp-includes/class-wp-locale.phpp" /wp-includes/class-wp-locale.php
 }
